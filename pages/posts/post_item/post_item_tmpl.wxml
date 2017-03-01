@@ -1,0 +1,21 @@
+<template name="post_item">
+    <view class="post_container">
+        <view class="post_author_date">
+            <!-- 
+                条件渲染wx:if={{condition}}  
+                块级条件渲染 <block wx:if="{{}}"></block>
+            -->
+            <image wx:if="{{true}}" class="post_author" src="{{avatar}}"></image>
+            <text class="post_date">{{date}}</text>
+        </view>
+        <text class="post_title">{{title}}</text>
+        <image class="post_image" src="{{imgSrc}}"></image>
+        <text class="post_content">{{content}}</text>
+        <view class="post_like">
+            <image class="post_like_image" src="/images/icon/chat.png"></image>
+            <text class="post_like_font">{{reading}}</text>
+            <image class="post_like_image" src="/images/icon/view.png"></image>
+            <text class="post_like_font">{{collection}}</text>
+        </view>
+    </view>
+</template>

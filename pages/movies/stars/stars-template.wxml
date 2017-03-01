@@ -1,0 +1,12 @@
+<template name="starsTemplate">
+  <view class="stars-container">
+    <view class="stars">
+      <!-- 由于我们将数据转换为[1,1,1,0,0]代表三颗星, 目前没有处理半颗星; 若要使用,请使用wx:elif="{{}}" -->
+      <block wx:for="{{stars}}" wx:for-item="i">
+        <image wx:if="{{i}}" src="/images/icon/star.png"></image>
+        <image wx:else src="/images/icon/none-star.png"></image>
+      </block>
+    </view>
+    <text class="star-score">{{score}}</text>
+  </view>
+</template>

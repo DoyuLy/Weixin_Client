@@ -1,0 +1,55 @@
+
+/*
+    flex布局是09年提出的弹性容器布局，跟传统的盒子模型有差异
+    详情请见阮一峰博客http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html?utm_source=tuicool 
+    注意css一定要有全局观，将整体作为一块来布局会更简洁明了
+*/
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*background-color: #b3d4db;*/
+    /*height: 100%; 设置100%和设置固定高度都是不可以的*/
+}
+
+/*背景色设置在最外部即可*/
+page{
+    background-color: #b3d4db;
+    height: 100%;
+}
+
+/*
+  rpx单位是微信小程序中css的尺寸单位，rpx可以根据屏幕宽度进行自适应。规定屏幕宽为750rpx。如在 iPhone6 上，屏幕宽度为375px，共有750个物理像素，则750rpx = 375px = 750物理像素，1rpx = 0.
+  rpx换算px: 屏幕宽／750
+  px换算rpx: 750／屏幕宽
+*/
+.user_avatar{
+    width:200rpx;
+    height:200rpx;
+    margin-top: 160rpx;
+}
+
+.user_name{
+    margin-top: 100rpx;
+    font-size: 32rpx;
+    font-family: Microsoft Yahei;
+    font-weight: bold;
+}
+
+.moto_container{
+    margin-top: 200rpx;
+    border: 1px solid #405f80;
+    width:200rpx;
+    height: 80rpx;
+    border-radius: 5px;
+    text-align: center; /*文字水平居中*/
+
+}
+
+.moto{
+    font-size: 22rpx;
+    font-family: Microsoft Yahei;
+    font-weight: bold;
+    line-height: 80rpx;/*设置line-height和容器一样高即可文字垂直居中*/
+    color: #405f80;
+}

@@ -1,0 +1,15 @@
+@import '../movie/movie-template.wxss';
+
+/*
+  scroll-view  
+  使用flex来布局会造成scroll-view滑动失效
+*/
+.single-view-container{
+    float:left;
+    margin-bottom: 40rpx;
+}
+
+.grid-container{
+    height: 1300rpx;
+    margin:40rpx 0 40rpx 10rpx;
+}

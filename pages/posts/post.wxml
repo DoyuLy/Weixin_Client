@@ -1,0 +1,27 @@
+<import src="post_item/post_item_tmpl.wxml" />
+<view>
+    <!-- swiper组件的样式只能添加在swiper上，添加在swiper-item上无效；且内部图片同时也得添加样式；
+    且内部只能添加swiper-item节点，其他节点会默认删除
+     -->
+    <swiper catchtap="onSwiperTap" vertical="{{false}}" indicator-dots="true" autoplay="true" interval="1500" duration="1000">
+        <swiper-item>
+            <image src="/images/post/bl.png" data-postId="1"></image>
+        </swiper-item>
+        <swiper-item>
+            <image src="/images/post/cat.png" data-postId="4"></image>
+        </swiper-item>
+        <swiper-item>
+            <image src="/images/post/crab.png" data-postId="0"></image>
+        </swiper-item>
+        <swiper-item>
+            <image src="/images/post/vr.png" data-postId="4"></image>
+        </swiper-item>
+    </swiper>
+</view>
+
+<!-- 子元素默认就是item，所以wx:for-item="item" 可以省略 ;序号默认是index，也可以省略wx:for-index="index"-->
+<block wx:for="{{postList}}" wx:for-item="item" wx:for-index="index">
+    <view catchtap="onPostTap" data-postid="{{item.postId}}">
+        <template is="post_item" data="{{...item}}"/>
+    </view>
+</block>

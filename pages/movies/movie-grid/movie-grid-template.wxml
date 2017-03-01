@@ -1,0 +1,16 @@
+<import src="../movie/movie-template.wxml" />
+<template name="movieGridTemplate">
+
+  <!--<scroll-view class="grid-container" scroll-x="false" scroll-y="true" bindscrolltolower="onScrollLower">-->
+  <view class="grid-container">
+    <block wx:for="{{movies}}" wx:for-item="movie">
+
+      <!-- 注意样式不能添加到template上,它只是一个占位符; 使movie模版浮动 -->
+      <view class="single-view-container">
+        <template is="movieTemplate" data="{{...movie}}" />
+      </view>
+    </block>
+  </view>
+
+  <!--</scroll-view>-->
+</template>

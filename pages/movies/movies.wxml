@@ -1,0 +1,27 @@
+<import src="movie-list/movie-list-template.wxml" />
+<import src="movie-grid/movie-grid-template.wxml" />
+
+<view class="search">
+  <icon type="search" class="search-img" size="13" color="#405f80"></icon>
+  <input type="text" placeholder="变形金刚..." placeholder-class="placeholder" bindfocus="onBindFocus" bindconfirm="onBindConfirm" />
+  <image wx:if="{{searchPanelShow}}" src="/images/icon/xx.png" class="xx-img" catchtap="onCancelImgTap"></image>
+</view>
+<view class="container" wx:if="{{containerShow}}">
+
+  <!-- 注意样式写在template组件里是不起效的,它在编译后会被替换,template本质是一个占位符 -->
+  <view class="movies-template">
+
+    <!-- 注意这里不能写成inTheaters.movies, 只能写成ES6的对象展开语法 -->
+    <template is="movieListTemplate" data="{{...inTheaters}}"></template>
+  </view>
+  <view class="movies-template">
+    <template is="movieListTemplate" data="{{...comingSoon}}"></template>
+  </view>
+  <view class="movies-template">
+    <template is="movieListTemplate" data="{{...top250}}"></template>
+  </view>
+</view>
+
+<view class="search-panel" wx:if="{{searchPanelShow}}">
+    <template is="movieGridTemplate" data="{{...searchResult}}"/>
+</view>

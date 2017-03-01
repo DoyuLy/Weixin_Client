@@ -1,0 +1,10 @@
+<!-- view类似于div；page类似body -->
+<view class="container">
+    <image class="user_avatar" src="/images/avatar/1.png"></image>
+    <!-- 只有text标签包围的文字才可以被长按选中 -->
+    <text class="user_name">Hello, 杜宇</text>
+    <view class="moto_container" bindtap="onTap">
+        <!-- text在之前的版本是不允许嵌套的 -->
+        <text class="moto">微信小程序</text>
+    </view>
+</view>

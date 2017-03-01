@@ -1,0 +1,9 @@
+<import src="../stars/stars-template.wxml" />
+<template name="movieTemplate">
+  <view class="movie-container" catchtap="onMovieTap" data-movieid="{{movieId}}">
+    <image class="movie-img" src="{{coverageUrl}}"></image>
+    <text class="movie-title">{{title}}</text>
+    <!-- 往子组件传递2个参数,可以定义json表达式 -->
+    <template is="starsTemplate" data="{{stars:stars, score: average}}"/>
+  </view>
+</template>
